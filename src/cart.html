@@ -145,7 +145,7 @@
                             <input type="number" value="2" min="1" class="w-16 p-1 border rounded text-center" id="qty">
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            ₱ <span id="totalprice">308</span>
+                            ₱ <span id="totalprice">218</span>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <button class="text-red-600 delete-btn">
@@ -162,7 +162,7 @@
             <div class="flex justify-end">
                 <div class="text-right">
                     <div class="text-sm text-gray-700">ORDER TOTAL:</div>
-                    <div class="text-2xl font-bold text-gray-900">₱ <span id="total">517.00</span></div>
+                    <div class="text-2xl font-bold text-gray-900">₱ <span id="total">427.00</span></div>
                 </div>
             </div>
         </div>
@@ -230,8 +230,8 @@
 
         function calculateTotal() {
             var total = 0;
-            var rows = document.getElementsByTagName('tr'); // Get all rows
-            for (var i = 1; i < rows.length; i++) { // Start from 1 to skip header row
+            var rows = document.getElementsByTagName('tr');
+            for (var i = 1; i < rows.length; i++) { 
                 var priceElement = rows[i].getElementsByClassName('price')[0].getElementsByTagName('span')[0];
                 var price = parseFloat(priceElement.innerText.replace('₱', '').trim());
                 var quantityInput = rows[i].getElementsByTagName('input')[0];
@@ -239,28 +239,17 @@
                 total += price * quantity;
                 rows[i].getElementsByClassName('total')[0].getElementsByTagName('span')[0].innerText = '₱ ' + (price * quantity).toFixed(2); // Update total for the row
             }
-            document.getElementById('total').innerText = total.toFixed(2); // Update total for all items
+            document.getElementById('total').innerText = total.toFixed(2);
         }
 
         var deleteButtons = document.getElementsByClassName('delete-btn');
         for (var i = 0; i < deleteButtons.length; i++) {
             deleteButtons[i].addEventListener('click', function () {
                 var row = this.closest('tr');
-                row.parentNode.removeChild(row); // Remove the row
-                calculateTotal(); // Recalculate total after deletion
+                row.parentNode.removeChild(row);
+                calculateTotal();
             });
         }
-
-        // Event listener for quantity changes
-        var quantityInputs = document.getElementsByTagName('input');
-        for (var i = 0; i < quantityInputs.length; i++) {
-            quantityInputs[i].addEventListener('input', function () {
-                calculateTotal(); // Recalculate total whenever quantity changes
-            });
-        }
-
-        // Initial total calculation on page load
-        calculateTotal();
     </script>
 </body>
 </html>

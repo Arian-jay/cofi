@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COFI-Sign-in</title>
+    <link rel="icon" href="../src/img/LOGO.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="../dist/output.css">
+    <style>
+        .input-container {
+            position: relative;
+        }
+        .input-label {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0 4px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background-color: transparent;
+        }
+        .input-label span {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .input-field:focus + .input-label,
+        .input-field:not(:placeholder-shown) + .input-label {
+            top: 0;
+            font-size: 0.75rem;
+            color: #4B5563;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px; /* Adjusted padding */
+            border: 2px solid black;
+            border-radius: 20px;
+            font-size: 0.9rem; /* Reduced font size */
+            transition: border-color 0.3s ease;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: black;
+        }
+        @media (max-width: 1023px) {
+            .mobile-bg {
+                background-image: url('../src/img/cofi-illustration.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="flex min-h-screen flex-col lg:flex-row">
+        <!-- Left side - Sign-in form -->
+        <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:px-8 xl:px-12 mobile-bg">
+            <div class="mx-auto w-full max-w-xs lg:w-80 bg-white bg-opacity-90 p-6 rounded-lg shadow-lg"> <!-- Adjusted max-w to prevent scrolling -->
+                <div class="text-center">
+                    <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">Join us</h2> <!-- Reduced title font size -->
+                    <p class="mt-2 text-sm text-gray-600">
+                        New here? Create an account and start<br>
+                        sipping on something special
+                    </p>
+                </div>
+
+                <div class="mt-6">
+                    <form class="space-y-4" action="#" method="POST"> <!-- Reduced space-y -->
+                        <div class="input-container">
+                            <input id="username" name="username" type="text" required
+                                class="input-field"
+                                placeholder=" ">
+                            <label for="username" class="input-label">
+                                <span>U</span><span>s</span><span>e</span><span>r</span><span>n</span><span>a</span><span>m</span><span>e</span>
+                            </label>
+                        </div>
+
+                        <div class="input-container">
+                            <input id="password" name="password" type="password" required
+                                class="input-field"
+                                placeholder=" ">
+                            <label for="password" class="input-label">
+                                <span>P</span><span>a</span><span>s</span><span>s</span><span>w</span><span>o</span><span>r</span><span>d</span>
+                            </label>
+                        </div>
+
+                        <div class="input-container">
+                            <input id="email" name="email" type="email" required
+                                class="input-field"
+                                placeholder=" ">
+                            <label for="email" class="input-label">
+                                <span>E</span><span>m</span><span>a</span><span>i</span><span>l</span>
+                            </label>
+                        </div>
+
+                        <div class="input-container">
+                            <input id="phone" name="phone" type="phone" required
+                                class="input-field"
+                                placeholder=" ">
+                            <label for="phone" class="input-label">
+                                <span>P</span><span>h</span><span>o</span><span>n</span><span>e</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <button type="submit"
+                                class="flex w-full justify-center rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-4 text-center text-sm"> <!-- Adjusted margin-top -->
+                        Already a member?
+                        <a href="signin.html" class="font-medium text-indigo-600 hover:text-indigo-500">
+                            Click here to Sign in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side - Illustration -->
+        <div class="relative hidden w-0 flex-1 lg:block">
+            <img class="absolute inset-0 h-full w-full object-contain p-4" src="../src/img/cofi.png" alt="COFI Coffee Shop Illustration">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.input-field');
+            
+            inputs.forEach(input => {
+                const label = input.nextElementSibling;
+                const spans = label.querySelectorAll('span');
+                
+                function animateLetters(moveUp) {
+                    spans.forEach((span, index) => {
+                        setTimeout(() => {
+                            span.style.transform = moveUp ? 'translateY(-10px)' : 'translateY(0)';
+                        }, index * 50);
+                    });
+                }
+
+                input.addEventListener('focus', function() {
+                    this.parentNode.classList.add('focused');
+                    animateLetters(true);
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.parentNode.classList.remove('focused');
+                        animateLetters(false);
+                    }
+                });
+                
+                // Check initial state
+                if (input.value !== '') {
+                    input.parentNode.classList.add('focused');
+                    animateLetters(true);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

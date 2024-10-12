@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Store Settings</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../src/img/LOGO.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="../dist/output.css">
     <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -91,7 +92,6 @@
                     </div>
                 </div>
             </div>
-
             <button type="submit" class="w-full text-black bg-gray-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50">
                 Save Changes
             </button>
@@ -117,20 +117,21 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
+                // Simulate form submission
                 const submitButton = this.querySelector('button[type="submit"]');
                 submitButton.textContent = 'Saving...';
                 submitButton.disabled = true;
 
                 setTimeout(() => {
                     submitButton.textContent = 'Changes Saved!';
-                    submitButton.classList.remove('bg-brown-600', 'hover:bg-brown-700');
+                    submitButton.classList.remove('bg-gray-600', 'hover:bg-gray-700');
                     submitButton.classList.add('bg-green-600', 'hover:bg-green-700');
 
                     setTimeout(() => {
                         submitButton.textContent = 'Save Changes';
                         submitButton.disabled = false;
                         submitButton.classList.remove('bg-green-600', 'hover:bg-green-700');
-                        submitButton.classList.add('bg-brown-600', 'hover:bg-brown-700');
+                        submitButton.classList.add('bg-gray-600', 'hover:bg-gray-700');
                     }, 2000);
                 }, 1500);
             });

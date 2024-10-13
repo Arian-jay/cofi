@@ -1,276 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COFI-menu</title>
-    <link rel="icon" href="../src/img/LOGO.PNG" type="image/x-icon">
-    <link href="../dist/output.css" rel="stylesheet">
-    <style>
-        .dropdown-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        input[type=number]::-webkit-inner-spin-button, 
-        input[type=number]::-webkit-outer-spin-button { 
-            -webkit-appearance: none; 
-            margin: 0; 
-        }
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 300px;
-            border-radius: 10px;
-        }
-    </style>
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>menu - COFI</title>
+        <link rel="icon" href="../src/img/LOGO.PNG" type="image/x-icon">
+        <link href="../dist/output.css" rel="stylesheet">
+        <style>
+            .dropdown-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            input[type=number]::-webkit-inner-spin-button, 
+            input[type=number]::-webkit-outer-spin-button { 
+                -webkit-appearance: none; 
+                margin: 0; 
+            }
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.4);
+            }
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 300px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
   <body class="bg-gray-100">
     <nav class="bg-white shadow-md">
-      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <button type="button" id="mobile-menu-button"
-              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu" aria-expanded="false">
-              <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
-              <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                id="burger">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-              <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                id="close">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div
-            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <a href="homepage.html" class="flex flex-shrink-0 items-center">
-              <img class="h-8 w-auto" src="../src/img/LOGO.PNG" alt="COFI">
-              <span class="ml-2 text-xl font-bold text-gray-900"
-                id="brand">COFI</span>
-            </a>
-            <div class="hidden sm:ml-6 sm:block">
-              <div class="flex space-x-4">
-                <a href="homepage.html"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">HOME</a>
-                <a href="menu.html"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">MENU</a>
-                <a href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">CONTACT
-                  US</a>
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <button type="button" id="mobile-menu-button"
+                class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                  id="burger">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                  id="close">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <a href="homepage.html" class="flex flex-shrink-0 items-center">
+                <img class="h-8 w-auto" src="../src/img/LOGO.PNG" alt="COFI">
+                <span class="ml-2 text-xl font-bold text-gray-900"
+                  id="brand">COFI</span>
+              </a>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <a href="homepage.html"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">HOME</a>
+                  <a href="menu.html"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">MENU</a>
+                  <a href="contact.html"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-black">CONTACT
+                    US</a>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <a type="button" href="cart.html"
-              class="md:me-4 relative rounded-full bg-white p-1 text-gray-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-100">
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">cart</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="currentColor" class="size-6">
-                <path
-                  d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
-              </svg>
-            </a>
-
-            <div class="relative ml-3">
-              <div>
-                <button type="button" id="user-menu-button"
-                  class="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-100 text-gray-700"
-                  aria-expanded="false" aria-haspopup="true">
-                  <span class="absolute -inset-1.5"></span>
-                  <span class="sr-only">profile</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    fill="currentColor" class="size-6 ">
-                    <path fill-rule="evenodd"
-                      d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-
-              <div id="profile"
-                class="dropdown-menu absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
-                role="menu" aria-orientation="vertical"
-                aria-labelledby="user-menu-button" tabindex="-1">
-                <a href="#"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem" tabindex="-1" id="user-menu-item-0">Your
-                  Profile</a>
-                <a href="setting.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem" tabindex="-1"
-                  id="user-menu-item-1">Settings</a>
-                <a href="index.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  role="menuitem" tabindex="-1" id="user-menu-item-2">Sign
-                  out</a>
+            <div
+              class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <a type="button" href="cart.html"
+                class="md:me-4 relative rounded-full bg-white p-1 text-gray-700 hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-100">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">cart</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  fill="currentColor" class="size-6">
+                  <path
+                    d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+                </svg>
+              </a>
+  
+              <div class="relative ml-3">
+                <div>
+                  <button type="button" id="user-menu-button"
+                    class="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-100 text-gray-700"
+                    aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">profile</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="currentColor" class="size-6 ">
+                      <path fill-rule="evenodd"
+                        d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+  
+                <div id="profile"
+                  class="dropdown-menu absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
+                  role="menu" aria-orientation="vertical"
+                  aria-labelledby="user-menu-button" tabindex="-1">
+                  <a href="profile.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem" tabindex="-1" id="user-menu-item-0">Your
+                    Profile</a>
+                  <a href="setting.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem" tabindex="-1"
+                    id="user-menu-item-1">Settings</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" 
+                    role="menuitem" tabindex="-1" 
+                    id="user-menu-item-2">history</a>
+                  <a href="index.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    role="menuitem" tabindex="-1" id="user-menu-item-2">Log
+                    out</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="dropdown-menu hidden sm:hidden" id="mobile-menu">
-        <div class="space-y-1 px-2 pb-3 pt-2">
-          <a href="homepage.html"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-black">HOME</a>
-          <a href="menu.html"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-black">MENU</a>
-          <a href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-black">CONTACT
-            US</a>
+  
+        <div class="dropdown-menu hidden sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <a href="homepage.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-black">HOME</a>
+            <a href="menu.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-black">MENU</a>
+            <a href="contact.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-black">CONTACT
+              US</a>
+          </div>
+        </div>
+      </nav>
+  
+      <div class="font-Inter px-12 pt-20">
+        <div class="flex justify-start">
+          <h1 class="font-bold text-4xl">
+            MENU
+          </h1>
         </div>
       </div>
-    </nav>
-
-    <div class="font-Inter px-12 pt-20">
-      <div class="flex justify-start">
-        <h1 class="font-bold text-4xl">
-          MENU
-        </h1>
-      </div>
-    </div>
-
-    <div class="bg-white">
-      <div
-        class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 class="sr-only">Products</h2>
-
+  
+      <div class="bg-white">
         <div
-          class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          <div class="group">
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <img src="../src/img/coffe-bag-pink.png" alt="coffe-bag-pink" class="h-full w-full object-cover object-center group-hover:opacity-75">
+          class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <h2 class="sr-only">Products</h2>
+  
+          <div
+            class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+            <div class="group">
+              <div
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="../src/img/coffe-bag-pink.png" alt="coffe-bag-pink" class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-gray-700">cofi bag pink</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">₱99</p>
+              <button style="width: 100%;"
+                class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
+                data-name="coffe-bag-pink" data-price="99">
+                Purchase
+              </button>
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">cofi bag pink</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">₱99</p>
-            <button style="width: 100%;"
-              class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
-              data-name="coffe-bag-pink" data-price="99">
-              Purchase
-            </button>
-          </div>
-          <div class="group">
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <img src="../src/img/coffee-blue.PNG" alt="cofi-blue" class="h-full w-full object-cover object-center group-hover:opacity-75">
+            <div class="group">
+              <div
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="../src/img/coffee-blue.PNG" alt="cofi-blue" class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-gray-700">cofi-blue</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">₱99</p>
+              <button style="width: 100%;"
+                class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
+                data-name="coffe-bag-pink" data-price="99">
+                Purchase
+              </button>
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">cofi-blue</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">₱99</p>
-            <button style="width: 100%;"
-              class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
-              data-name="coffe-bag-pink" data-price="99">
-              Purchase
-            </button>
-          </div>
-          <div class="group">
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <img src="../src/img/coffee-green.PNG" alt="cofi-green" class="h-full w-full object-cover object-center group-hover:opacity-75">
+            <div class="group">
+              <div
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="../src/img/coffee-green.PNG" alt="cofi-green" class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-gray-700">cofi-green</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">₱99</p>
+              <button style="width: 100%;"
+                class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
+                data-name="coffe-bag-pink" data-price="99">
+                Purchase
+              </button>
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">cofi-green</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">₱99</p>
-            <button style="width: 100%;"
-              class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
-              data-name="coffe-bag-pink" data-price="99">
-              Purchase
-            </button>
-          </div>
-          <div class="group">
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <img src="../src/img/straweberry-cake.png" alt="strawberry-cake" class="h-full w-full object-cover object-center group-hover:opacity-75">
+            <div class="group">
+              <div
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="../src/img/straweberry-cake.png" alt="strawberry-cake" class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-gray-700">strawberry-cake</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">₱49</p>
+              <button style="width: 100%;"
+                class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
+                data-name="coffe-bag-pink" data-price="99">
+                Purchase
+              </button>
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">strawberry-cake</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">₱49</p>
-            <button style="width: 100%;"
-              class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
-              data-name="coffe-bag-pink" data-price="99">
-              Purchase
-            </button>
-          </div>
-          <div class="group">
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <img src="../src/img/green-label.png" alt="green-label" class="h-full w-full object-cover object-center group-hover:opacity-75">
+            <div class="group">
+              <div
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="../src/img/green-label.png" alt="green-label" class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-gray-700">green-label</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">₱59</p>
+              <button style="width: 100%;"
+                class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
+                data-name="coffe-bag-pink" data-price="99">
+                Purchase
+              </button>
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">green-label</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">₱59</p>
-            <button style="width: 100%;"
-              class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
-              data-name="coffe-bag-pink" data-price="99">
-              Purchase
-            </button>
-          </div>
-          <div class="group">
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <img src="../src/img/yellow-label.PNG" alt="yellow-label" class="h-full w-full object-cover object-center group-hover:opacity-75">
+            <div class="group">
+              <div
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="../src/img/yellow-label.PNG" alt="yellow-label" class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-gray-700">yellow-label</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">₱59</p>
+              <button style="width: 100%;"
+                class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
+                data-name="coffe-bag-pink" data-price="99">
+                Purchase
+              </button>
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">yellow-label</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">₱59</p>
-            <button style="width: 100%;"
-              class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
-              data-name="coffe-bag-pink" data-price="99">
-              Purchase
-            </button>
-          </div>
-          <div class="group">
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <img src="../src/img/cofi-black.png" alt="cofi-black" class="h-full w-full object-cover object-center group-hover:opacity-75">
+            <div class="group">
+              <div
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="../src/img/cofi-black.png" alt="cofi-black" class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-gray-700">cofi-black</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">₱59</p>
+              <button style="width: 100%;"
+                class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
+                data-name="coffe-bag-pink" data-price="99">
+                Purchase
+              </button>
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">cofi-black</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">₱59</p>
-            <button style="width: 100%;"
-              class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
-              data-name="coffe-bag-pink" data-price="99">
-              Purchase
-            </button>
-          </div>
-          <div class="group">
-            <div
-              class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-              <img src="../src/img/honey-cake.png" alt="honey-cake" class="h-full w-full object-cover object-center group-hover:opacity-75">
+            <div class="group">
+              <div
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <img src="../src/img/honey-cake.png" alt="honey-cake" class="h-full w-full object-cover object-center group-hover:opacity-75">
+              </div>
+              <h3 class="mt-4 text-sm text-gray-700">honey-cake</h3>
+              <p class="mt-1 text-lg font-medium text-gray-900">₱49</p>
+  
+              <button style="width: 100%;"
+                class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
+                data-name="coffe-bag-pink" data-price="99">
+                Purchase
+              </button>
+  
             </div>
-            <h3 class="mt-4 text-sm text-gray-700">honey-cake</h3>
-            <p class="mt-1 text-lg font-medium text-gray-900">₱49</p>
-
-            <button style="width: 100%;"
-              class="purchase-btn bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 mt-4 transition duration-300"
-              data-name="coffe-bag-pink" data-price="99">
-              Purchase
-            </button>
-
           </div>
         </div>
-      </div>
     </div>
 
     <div id="purchaseModal" class="modal">
@@ -291,90 +294,122 @@
       </div>
     </div>
 
-    <footer class="bg-black text-white py-4">
-      <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center px-4">
-          <div class="text-center sm:text-left mb-2 sm:mb-0">
-              <span class="text-gray-300 text-xs">© 2024 Rocales | Puspus | Prisco. All rights reserved.</span>
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="container mx-auto px-4">
+          <div class="flex flex-wrap justify-between">
+              <div class="w-full sm:w-1/2 md:w-1/3 mb-6 md:mb-0">
+                  <h3 class="text-xl font-bold mb-2">COFI</h3>
+                  <p class="text-gray-400">Brewing happiness, one cup at a time.</p>
+              </div>
+              <div class="w-full sm:w-1/2 md:w-1/3 mb-6 md:mb-0">
+                  <h3 class="text-xl font-bold mb-2">Quick Links</h3>
+                  <ul class="text-gray-400">
+                      <li><a href="homepage.html" class="hover:text-white">Home</a></li>
+                      <li><a href="menu.html" class="hover:text-white">Menu</a></li>
+                      <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="w-full sm:w-1/2 md:w-1/3">
+                  <h3 class="text-xl font-bold mb-2">Connect With Us</h3>
+                  <div class="flex space-x-4">
+                    <!--FACEBOOK-->
+                      <a href="#" class="text-gray-400 hover:text-white">
+                          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M22  12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                          </svg>
+                      </a>
+                      <!--INSTAGRAM-->
+                      <a href="#" class="text-gray-400 hover:text-white">
+                          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                          </svg>
+                      </a>
+                      <!--TWITTER-->
+                      <a href="#" class="text-gray-400 hover:text-white">
+                          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                          </svg>
+                      </a>
+                  </div>
+              </div>
           </div>
-          <div class="text-center sm:text-right">
-              <a href="#" class="text-gray-300 hover:text-green-500 transition duration-200 text-xs">Privacy Policy</a>
-              <span class="mx-2">|</span>
-              <a href="#" class="text-gray-300 hover:text-green-500 transition duration-200 text-xs">Terms of Service</a>
+          <div class="mt-8 text-center text-gray-400 text-sm">
+              <p>© 2024 COFI. All rights reserved.</p>
+              <p>Developed by Rocales | Puspus | Prisco.</p>
           </div>
       </div>
-    </footer>
+  </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-          const mobileMenuButton = document.getElementById('mobile-menu-button');
-          const userMenuButton = document.getElementById('user-menu-button');
-          const burgerIcon = document.getElementById('burger');
-          const closeIcon = document.getElementById('close');
-          const mobileMenu = document.getElementById('mobile-menu');
-          const profileMenu = document.getElementById('profile');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const userMenuButton = document.getElementById('user-menu-button');
+            const burgerIcon = document.getElementById('burger');
+            const closeIcon = document.getElementById('close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const profileMenu = document.getElementById('profile');
 
-          function toggleMenu(menu, button, isProfile = false) {
-            let otherMenu, otherButton;
+            function toggleMenu(menu, button, isProfile = false) {
+                let otherMenu, otherButton;
 
-            if (isProfile) {
-              otherMenu = mobileMenu;
-              otherButton = mobileMenuButton;
-            } else {
-              otherMenu = profileMenu;
-              otherButton = userMenuButton;
+                if (isProfile) {
+                otherMenu = mobileMenu;
+                otherButton = mobileMenuButton;
+                } else {
+                otherMenu = profileMenu;
+                otherButton = userMenuButton;
+                }
+                //e close ang other menu pag mag open ug lain
+                if (!otherMenu.classList.contains('hidden')) {
+                otherMenu.style.maxHeight = '0';
+                setTimeout(() => otherMenu.classList.add('hidden'), 300);
+                otherButton.setAttribute('aria-expanded', 'false');
+                }
+
+                if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.style.maxHeight = menu.scrollHeight + 'px';  // Smooth pag open ang dropdown
+                button.setAttribute('aria-expanded', 'true');
+                } else {
+                menu.style.maxHeight = '0';  // Smooth pag close
+                setTimeout(() => menu.classList.add('hidden'), 300);
+                button.setAttribute('aria-expanded', 'false');
+                }
+
+                if (!isProfile) {
+                burgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+                } else {
+                // ang burger icon ang makita kung e click ang profile
+                burgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                }
             }
-              //e close ang other menu pag mag open ug lain
-            if (!otherMenu.classList.contains('hidden')) {
-              otherMenu.style.maxHeight = '0';
-              setTimeout(() => otherMenu.classList.add('hidden'), 300);
-              otherButton.setAttribute('aria-expanded', 'false');
-            }
 
-            if (menu.classList.contains('hidden')) {
-              menu.classList.remove('hidden');
-              menu.style.maxHeight = menu.scrollHeight + 'px';  // Smooth pag open ang dropdown
-              button.setAttribute('aria-expanded', 'true');
-            } else {
-              menu.style.maxHeight = '0';  // Smooth pag close
-              setTimeout(() => menu.classList.add('hidden'), 300);
-              button.setAttribute('aria-expanded', 'false');
-            }
+            // Add event listeners for the buttons
+            mobileMenuButton.addEventListener('click', function() {
+                toggleMenu(mobileMenu, mobileMenuButton);
+            });
 
-            if (!isProfile) {
-              burgerIcon.classList.toggle('hidden');
-              closeIcon.classList.toggle('hidden');
-            } else {
-              // ang burger icon ang makita kung e click ang profile
-              burgerIcon.classList.remove('hidden');
-              closeIcon.classList.add('hidden');
-            }
-          }
+            userMenuButton.addEventListener('click', function() {
+                toggleMenu(profileMenu, userMenuButton, true);
+            });
 
-          // Add event listeners for the buttons
-          mobileMenuButton.addEventListener('click', function() {
-            toggleMenu(mobileMenu, mobileMenuButton);
-          });
-
-          userMenuButton.addEventListener('click', function() {
-            toggleMenu(profileMenu, userMenuButton, true);
-          });
-
-          // Close menus if you click outside them
-          document.addEventListener('click', function(event) {
-            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-              mobileMenu.style.maxHeight = '0';
-              setTimeout(() => mobileMenu.classList.add('hidden'), 300);
-              mobileMenuButton.setAttribute('aria-expanded', 'false');
-              burgerIcon.classList.remove('hidden');
-              closeIcon.classList.add('hidden');
-            }
-            if (!userMenuButton.contains(event.target) && !profileMenu.contains(event.target)) {
-              profileMenu.style.maxHeight = '0';
-              setTimeout(() => profileMenu.classList.add('hidden'), 300);
-              userMenuButton.setAttribute('aria-expanded', 'false');
-            }
-          });
-        });
+            // Close menus if you click outside them
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                burgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                }
+                if (!userMenuButton.contains(event.target) && !profileMenu.contains(event.target)) {
+                profileMenu.style.maxHeight = '0';
+                setTimeout(() => profileMenu.classList.add('hidden'), 300);
+                userMenuButton.setAttribute('aria-expanded', 'false');
+                }
+            });
 
             // Purchase functionality
             const modal = document.getElementById('purchaseModal');
@@ -393,12 +428,36 @@
                     quantityInput.value = 1;
                     modal.style.display = 'block';
                 });
+            });
 
-            confirmButton.addEventListener('click', function() {
-                const quantity = quantityInput.value;
-                const name = modalProductName.textContent;
-                modal.style.display = 'none';
-                window.location.href = 'menu.html';
+            confirmButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                this.textContent = 'Processing...';
+                this.disabled = true;
+                this.classList.add('opacity-75', 'cursor-not-allowed');
+
+                setTimeout(() => {
+                    this.textContent = 'Purchase Confirmed!';
+                    this.classList.remove('bg-black', 'hover:bg-blue-600');
+                    this.classList.add('bg-green-600', 'hover:bg-green-700');
+                    cancelButton.style.display = 'none';
+                    
+                    setTimeout(() => {
+                      this.textContent = 'Closing...';
+                      this.disabled = true;
+
+                      setTimeout(() => {
+                        modal.style.display = 'none';
+                        this.textContent = 'Confirm Purchase';
+                        this.disabled = false;
+                        this.classList.remove('bg-green-600', 'hover:bg-green-700', 'opacity-75', 'cursor-not-allowed');
+                        this.classList.add('bg-black', 'hover:bg-blue-600');
+                        cancelButton.style.display = '';
+                      }, 1000);
+                    }, 2000);
+                }, 1500);
+                
             });
 
             cancelButton.addEventListener('click', function() {

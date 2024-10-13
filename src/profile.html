@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Store Profile</title>
+    <title>Profile - COFI</title>
     <link rel="icon" href="../src/img/LOGO.PNG" type="image/x-icon">
     <link rel="stylesheet" href="../dist/output.css">
     <style>
@@ -16,35 +16,35 @@
         }
     </style>
 </head>
-<body class="bg-coffee-50 min-h-screen font-sans">
-    <header class="bg-coffee-800 text-white py-4 shadow-md">
+<body class="">
+    <nav class="bg-white shadow-md py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <img class="h-8 w-auto" src="../src/img/LOGO.PNG" alt="COFI">
-              <span class="ml-2 text-xl font-bold text-gray-900"
-                id="brand">COFI</span>
+                <span class="ml-2 text-xl font-bold text-gray-900" id="brand">COFI</span>
             </div>
             <nav>
-                <a href="setting.html" class="inline-flex items-center px-4 py-2 bg-coffee-700 text-white font-medium rounded-lg shadow hover:bg-coffee-600 transition duration-300 ease-in-out mr-2">
+                <a href="setting.html" class="inline-flex items-center px-4 py-2 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-600 transition duration-300 ease-in-out mr-2">
                     Settings
                 </a>
-                <a href="homepage.html" class="inline-flex items-center px-4 py-2 bg-coffee-700 text-white font-medium rounded-lg shadow hover:bg-coffee-600 transition duration-300 ease-in-out">
+                <a href="homepage.html" class="inline-flex items-center px-4 py-2 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-600 transition duration-300 ease-in-out">
                     Home
                 </a>
-            </nav>
+            </nav>            
         </div>
-    </header>
+    </nav>
+    
 
     <main class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden fade-in">
             <div class="relative">
-                <div id="profileBanner" class="h-48 bg-coffee-300 flex items-center justify-center text-coffee-600">
+                <div id="profileBanner" class="h-48 bg-gray-300 flex items-center justify-center text-gray-600">
                     <span id="bannerPlaceholder" class="text-2xl">Click to add a banner image</span>
                     <img id="bannerImage" src="" alt="Profile Banner" class="hidden w-full h-full object-cover">
                 </div>
                 <input type="file" id="bannerUpload" class="hidden" accept="image/*">
                 <button id="editBanner" class="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-coffee-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                     </svg>
                 </button>
@@ -53,46 +53,46 @@
             <div class="p-6 sm:p-10 space-y-6">
                 <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <div class="relative">
-                        <div id="profilePicture" class="w-32 h-32 bg-coffee-200 rounded-full flex items-center justify-center text-coffee-600 overflow-hidden">
+                        <div id="profilePicture" class="w-32 h-32 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 overflow-hidden">
                             <span id="avatarPlaceholder" class="text-4xl">+</span>
                             <img id="avatarImage" src="" alt="Profile Picture" class="hidden w-full h-full object-cover">
                         </div>
                         <input type="file" id="avatarUpload" class="hidden" accept="image/*">
                         <button id="editAvatar" class="absolute bottom-0 right-0 bg-white p-2 rounded-full shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-coffee-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                             </svg>
                         </button>
                     </div>
                     <div class="text-center sm:text-left">
-                        <h1 id="userName" class="text-3xl font-bold text-coffee-800">Arian Jay E. Prisco</h1>
-                        <p id="userLocation" class="text-coffee-600">Libertad, Butuan City, Agusan del Norte</p>
+                        <h1 id="userName" class="text-3xl font-bold text-gray-800">Arian Jay E. Prisco</h1>
+                        <p id="userLocation" class="text-gray-600">Libertad, Butuan City, Agusan del Norte</p>
                     </div>
                 </div>
                 
                 <div class="space-y-4">
                     <div>
-                        <label for="bio" class="block text-sm font-medium text-coffee-700 mb-1">Bio</label>
-                        <textarea id="bio" rows="3" class="w-full px-3 py-2 rounded-md border-2 border-coffee-300 focus:border-coffee-500 focus:ring focus:ring-coffee-200 focus:ring-opacity-50 transition-all duration-300" placeholder="About yourself..."></textarea>
+                        <label for="bio" class="block text-sm font-medium text-gray-700 mb-1">Bio</label>
+                        <textarea id="bio" rows="3" class="w-full px-3 py-2 rounded-md border-2 border-gray-300 focus:border-gray-500 focus:ring focus:ring-gray-200 focus:ring-opacity-50 transition-all duration-300" placeholder="About yourself..."></textarea>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-coffee-700 mb-1">Email</label>
-                        <p class="w-full px-3 py-2 rounded-md bg-coffee-100 text-coffee-800">priscoarianjay159@gmail.com</p>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <p class="w-full px-3 py-2 rounded-md bg-gray-100 text-gray-800">priscoarianjay159@gmail.com</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-coffee-700 mb-1">Phone</label>
-                        <p class="w-full px-3 py-2 rounded-md bg-coffee-100 text-coffee-800">+63 991 882 3082</p>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                        <p class="w-full px-3 py-2 rounded-md bg-gray-100 text-gray-800">+63 991 882 3082</p>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-coffee-700 mb-1">Social Links</label>
-                        <p class="w-full px-3 py-2 rounded-md bg-coffee-100 text-coffee-800">
-                            <a href="https://twitter.com/johndoe" class="text-coffee-600 hover:underline">Facebook</a> |
-                            <a href="https://linkedin.com/in/johndoe" class="text-coffee-600 hover:underline">Instragram</a>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Social Links</label>
+                        <p class="w-full px-3 py-2 rounded-md bg-gray-100 text-gray-800">
+                            <a href="https://www.facebook.com/profile.php?id=100009416138022" class="text-gray-600 hover:underline">Facebook</a> |
+                            <a href="#" class="text-gray-600 hover:underline">Instragram</a>
                         </p>
                     </div>
                 </div>
                 
-                <button id="saveProfile" class="w-full py-3 px-4 bg-coffee-600 text-white font-medium rounded-md shadow-md hover:bg-coffee-700 focus:outline-none focus:ring-2 focus:ring-coffee-500 focus:ring-opacity-50 transition-all duration-300 transform hover:scale-105">
+                <button id="saveProfile" class="w-full py-3 px-4 bg-gray-600 text-white font-medium rounded-md shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-300 transform hover:scale-105">
                     Save Profile
                 </button>
             </div>
@@ -148,14 +148,14 @@
 
                 setTimeout(() => {
                     this.textContent = 'Profile Saved!';
-                    this.classList.remove('bg-coffee-600', 'hover:bg-coffee-700');
+                    this.classList.remove('bg-gray-600', 'hover:bg-gray-700');
                     this.classList.add('bg-green-600', 'hover:bg-green-700');
 
                     setTimeout(() => {
                         this.textContent = 'Save Profile';
                         this.disabled = false;
                         this.classList.remove('bg-green-600', 'hover:bg-green-700', 'opacity-75', 'cursor-not-allowed');
-                        this.classList.add('bg-coffee-600', 'hover:bg-coffee-700');
+                        this.classList.add('bg-gray-600', 'hover:bg-gray-700');
                     }, 2000);
                 }, 1500);
             });

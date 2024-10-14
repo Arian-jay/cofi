@@ -61,8 +61,8 @@
                         <div id="profile"
                             class="dropdown-menu absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                            <a href="profile.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-0">Profile</a>
+                            <a href="setting.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
                             <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-2">Log out</a>
                         </div>
                     </div>
@@ -91,12 +91,12 @@
                         <div class="px-4 py-5 sm:p-6">
                             <h2 class="text-lg font-medium text-gray-900 mb-4">Sales Summary</h2>
                             <div>
-                                <p class="text-3xl font-bold text-indigo-600" id="total-sales">$0.00</p>
+                                <p class="text-3xl font-bold text-indigo-600" id="total-sales">₱0.00</p>
                                 <p class="text-gray-600">Total Sales Today</p>
                                 <div class="mt-4">
                                     <h3 class="font-medium text-gray-900">Recent Orders</h3>
                                     <ul class="mt-2 space-y-2" id="recent-orders">
-                                        <!-- Recent orders will be dynamically inserted here -->
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -130,14 +130,6 @@
             </div>
         </div>
     </main>
-
-    <footer class="bg-white shadow mt-8">
-        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm text-gray-500">
-                &copy; <span id="current-year"></span> COFI. All rights reserved.
-            </p>
-        </div>
-    </footer>
 
     <!-- Modal for updating inventory -->
     <div id="update-inventory-modal" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -224,9 +216,9 @@
     <script>
         // Sample data
         let orders = [
-            { id: '1004', items: '2 x Espresso, 1 x Croissant', total: 12.50, status: 'pending' },
-            { id: '1005', items: '1 x Latte, 2 x Blueberry Muffin', total: 15.75, status: 'pending' },
-            { id: '1006', items: '3 x Cappuccino, 2 x Chocolate Chip Cookie', total: 22.00, status: 'pending' },
+            { id: '1004', items: '2 x coffe-green (pack), 1 x Honey cake', total: 244.00, status: 'pending' },
+            { id: '1005', items: '1 x strawberry-cake, 1 x cofi-black', total: 108.00, status: 'pending' },
+            { id: '1006', items: '1 x yellow-label', total: 49.00, status: 'pending' },
         ];
 
         let inventory = [
@@ -264,7 +256,7 @@
                 orderElement.innerHTML = `
                     <h3 class="font-bold text-lg mb-2">Order #${order.id}</h3>
                     <p class="text-gray-600 mb-2">${order.items}</p>
-                    <p class="text-gray-800 font-semibold mb-3">Total: $${order.total.toFixed(2)}</p>
+                    <p class="text-gray-800 font-semibold mb-3">Total: ₱${order.total.toFixed(2)}</p>
                     <div class="flex space-x-2">
                         <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-300 ease-in-out" onclick="handleOrderAction('${order.id}', 'accept')">Accept</button>
                         <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-300 ease-in-out" onclick="handleOrderAction('${order.id}', 'decline')">Decline</button>
